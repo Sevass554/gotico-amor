@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Amor Gótico</title>
+  <style>
+    body {
+      background-color: #1e1e1e; /* Fondo oscuro para el estilo gótico */
+      color: #ffffff; /* Texto blanco */
+      font-family: 'Courier New', Courier, monospace;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #ff0066; /* Color rosado para contraste */
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 5px #000000;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 1rem;
+      border: 2px solid #ff0066;
+      background-color: #000000;
+      color: #ffffff;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: #ff0066;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-shadow: 1px 1px 3px #000000;
+    }
+
+    button:hover {
+      background-color: #cc0055;
+    }
+
+    .message {
+      margin-top: 20px;
+      font-size: 1.5rem;
+      line-height: 1.5;
+    }
+
+    .message img {
+      width: 100px;
+      height: 100px;
+      margin: 10px;
+      border-radius: 50%;
+      border: 2px solid #ff0066;
+    }
+
+    .hearts {
+      margin-top: 20px;
+      animation: pulse 1s infinite alternate;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.2); }
+    }
+  </style>
+</head>
+<body>
+  <h1>Mi Amor Gótico</h1>
+  <p>Escribe tu nombre y descubre un mensaje especial para ti:</p>
+  <input type="text" id="nameInput" placeholder="Tu nombre">
+  <br>
+  <button onclick="showMessage()">Ver mensaje</button>
+
+  <div id="output" class="message"></div>
+
+  <script>
+    function showMessage() {
+      const name = document.getElementById("nameInput").value;
+      if (name.trim() === "") {
+        alert("Por favor, escribe un nombre");
+        return;
+      }
+
+      const output = document.getElementById("output");
+      output.innerHTML = `
+        <p>Hola <span style="color: #ff0066;">${name}</span>, me pareces el amor de mi vida. ¿Quieres casarte conmigo? :3</p>
+        <div class="hearts">
+          ❤️ ❤️ ❤️ ❤️ ❤️
+        </div>
+        <div>
+          <img src="https://placekitten.com/100/100" alt="Gatito">
+          <img src="https://placekitten.com/101/101" alt="Gatito">
+          <img src="https://placekitten.com/102/102" alt="Gatito">
+        </div>
+      `;
+    }
+  </script>
+</body>
+</html>
